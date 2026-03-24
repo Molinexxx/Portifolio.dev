@@ -1,7 +1,7 @@
 const githubUser = "Molinexxx";
 const projectsGrid = document.querySelector("#projects-grid");
 const repoCount = document.querySelector("#repo-count");
-const hiddenRepositories = ["Portfolio.dev", "Molinexxx"];
+const hiddenRepositories = ["Portfolio.dev", "Molinexxx", "Jogo_da_memoria"];
 const customProjects = [
   {
     name: "Jogo_da_memoria",
