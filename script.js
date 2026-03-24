@@ -71,7 +71,6 @@ const featuredOverrides = {
 
 const featuredOrder = [
   "project-barbearia",
-  "Tcc-avanchtech-php",
   "Crud-em-java",
   "TCC-avanca-tech-Java",
   "Back-end---Mercado-List",
