@@ -2,6 +2,28 @@ const githubUser = "Molinexxx";
 const projectsGrid = document.querySelector("#projects-grid");
 const repoCount = document.querySelector("#repo-count");
 const hiddenRepositories = ["Portfolio.dev", "Molinexxx"];
+const customProjects = [
+  {
+    name: "Jogo_da_memoria",
+    title: "Jogo da Memoria",
+    type: "Projeto em PHP",
+    cover: "GAME",
+    status: "Logica e sessao",
+    description:
+      "Jogo da memoria desenvolvido em PHP com emojis, controle por sessao, comparacao de pares, contador de tentativas e reinicio da partida.",
+    stack: ["PHP", "HTML", "CSS", "Bootstrap", "Session"],
+    imageCandidates: [
+      "assets/projects/imagem_jogo-da_memoria.png",
+      "assets/projects/Jogo_da_memoria.svg",
+    ],
+    repository: "https://github.com/Molinexxx/Jogo_da_memoria",
+    demo: "https://github.com/Molinexxx/Jogo_da_memoria",
+    updatedAt: "2026-03-23T22:05:00Z",
+    stars: 0,
+    year: 2026,
+    repoName: "Jogo_da_memoria",
+  },
+];
 
 const featuredOverrides = {
   "Tcc-avanchtech-php": {
@@ -72,13 +94,14 @@ const featuredOverrides = {
 const featuredOrder = [
   "project-barbearia",
   "Crud-em-java",
+  "Jogo_da_memoria",
   "TCC-avanca-tech-Java",
   "Back-end---Mercado-List",
   "Aula_PHP",
   "aula_java",
 ];
 
-const localImageCandidates = [".png", ".jpg", ".jpeg", ".webp"];
+const localImageCandidates = [".svg", ".png", ".jpg", ".jpeg", ".webp"];
 
 function formatDate(dateString) {
   return new Intl.DateTimeFormat("pt-BR", {
@@ -275,11 +298,27 @@ async function loadProjects() {
     }
 
     const sortedRepositories = sortRepositories(publicRepositories);
+    const sortedProjects = [
+      ...customProjects,
+      ...sortedRepositories.map(buildProjectData),
+    ].sort((first, second) => {
+      const featuredIndex = new Map(featuredOrder.map((repoName, index) => [repoName, index]));
+      const firstFeatured = featuredIndex.has(first.repoName)
+        ? featuredIndex.get(first.repoName)
+        : Number.MAX_SAFE_INTEGER;
+      const secondFeatured = featuredIndex.has(second.repoName)
+        ? featuredIndex.get(second.repoName)
+        : Number.MAX_SAFE_INTEGER;
+
+      if (firstFeatured !== secondFeatured) {
+        return firstFeatured - secondFeatured;
+      }
+
+      return new Date(second.updatedAt) - new Date(first.updatedAt);
+    });
     projectsGrid.innerHTML = "";
 
-    sortedRepositories
-      .map(buildProjectData)
-      .forEach((project) => projectsGrid.appendChild(createProjectCard(project)));
+    sortedProjects.forEach((project) => projectsGrid.appendChild(createProjectCard(project)));
   } catch (error) {
     console.error(error);
     repoCount.textContent = "--";

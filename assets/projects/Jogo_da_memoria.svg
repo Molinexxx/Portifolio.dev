@@ -1,0 +1,62 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="60" x2="1060" y2="660" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFF"/>
+      <stop offset="1" stop-color="#E9EEF8"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4D37FF"/>
+      <stop offset="1" stop-color="#2C1FD8"/>
+    </linearGradient>
+    <linearGradient id="button" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FF5B6E"/>
+      <stop offset="1" stop-color="#E13249"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="720" rx="32" fill="url(#bg)"/>
+  <circle cx="120" cy="104" r="72" fill="#F4F6FB"/>
+  <circle cx="1080" cy="620" r="96" fill="#F2F5FB"/>
+
+  <text x="600" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" fill="#0B1730">Jogo da Memória</text>
+  <text x="600" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#23314F">Tentativas: 14</text>
+
+  <rect x="494" y="206" width="212" height="56" rx="12" fill="url(#button)"/>
+  <text x="600" y="243" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#FFFFFF">Reiniciar Jogo</text>
+
+  <g transform="translate(360 330)">
+    <rect width="118" height="118" rx="16" fill="url(#card)"/>
+    <text x="59" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" fill="#FFFFFF">?</text>
+  </g>
+  <g transform="translate(496 330)">
+    <rect width="118" height="118" rx="16" fill="url(#card)"/>
+    <text x="59" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="44">😎</text>
+  </g>
+  <g transform="translate(632 330)">
+    <rect width="118" height="118" rx="16" fill="url(#card)"/>
+    <text x="59" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="44">🚀</text>
+  </g>
+  <g transform="translate(768 330)">
+    <rect width="118" height="118" rx="16" fill="url(#card)"/>
+    <text x="59" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="44">🧬</text>
+  </g>
+
+  <g transform="translate(360 466)">
+    <rect width="118" height="118" rx="16" fill="url(#card)"/>
+    <text x="59" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="44">🪐</text>
+  </g>
+  <g transform="translate(496 466)">
+    <rect width="118" height="118" rx="16" fill="url(#card)"/>
+    <text x="59" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="44">😎</text>
+  </g>
+  <g transform="translate(632 466)">
+    <rect width="118" height="118" rx="16" fill="url(#card)"/>
+    <text x="59" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="44">😍</text>
+  </g>
+  <g transform="translate(768 466)">
+    <rect width="118" height="118" rx="16" fill="url(#card)"/>
+    <text x="59" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="44">🍕</text>
+  </g>
+
+  <text x="600" y="658" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#64748B">Desenvolvido por Kaua Molina em PHP</text>
+</svg>
