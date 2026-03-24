@@ -1,16 +1,26 @@
 const githubUser = "Molinexxx";
 const projectsGrid = document.querySelector("#projects-grid");
 const repoCount = document.querySelector("#repo-count");
+const hiddenRepositories = ["Portfolio.dev"];
 
 const featuredOverrides = {
   "Tcc-avanchtech-php": {
-    title: "BarberPro SaaS em PHP",
-    type: "Sistema web",
+    title: "TCC Avanch Tech PHP",
+    type: "Projeto academico",
     cover: "PHP",
     status: "Em destaque",
     description:
-      "Sistema para barbearias com foco em autenticacao, dashboard, clientes, servicos, equipe e agendamentos.",
+      "Projeto de TCC em PHP com foco em estrutura web, organizacao de sistema, banco de dados e evolucao pratica no backend.",
     stack: ["PHP", "MySQL", "PDO", "Bootstrap"],
+  },
+  "project-barbearia": {
+    title: "Projeto SaaS Barbearia",
+    type: "Sistema web",
+    cover: "PHP",
+    status: "Projeto SaaS",
+    description:
+      "Sistema web para barbearia com foco em gestao, organizacao de atendimento, cadastros e experiencia administrativa.",
+    stack: ["PHP", "MySQL", "CRUD", "Web"],
   },
   "Crud-em-java": {
     title: "CRUD em Java",
@@ -60,6 +70,7 @@ const featuredOverrides = {
 };
 
 const featuredOrder = [
+  "project-barbearia",
   "Tcc-avanchtech-php",
   "Crud-em-java",
   "TCC-avanca-tech-Java",
@@ -250,7 +261,10 @@ async function loadProjects() {
 
     const repositories = await response.json();
     const allPublicRepositories = repositories.filter(
-      (repo) => !repo.fork && repo.name !== `${githubUser}.github.io`
+      (repo) =>
+        !repo.fork &&
+        repo.name !== `${githubUser}.github.io` &&
+        !hiddenRepositories.includes(repo.name)
     );
     const publicRepositories = allPublicRepositories.slice(0, 9);
 
