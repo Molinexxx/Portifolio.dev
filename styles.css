@@ -1,14 +1,16 @@
 :root {
-  --bg: #07111f;
-  --bg-soft: rgba(8, 20, 36, 0.74);
-  --panel: rgba(14, 30, 51, 0.86);
-  --panel-border: rgba(150, 194, 255, 0.16);
-  --text: #f5f7fb;
-  --muted: #9db1cb;
-  --accent: #63e6be;
-  --accent-strong: #00c389;
-  --accent-warm: #ffb86b;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  --bg: #050816;
+  --bg-soft: rgba(10, 16, 32, 0.82);
+  --panel: rgba(12, 20, 38, 0.92);
+  --panel-border: rgba(98, 140, 255, 0.18);
+  --text: #eef4ff;
+  --muted: #91a3c2;
+  --accent: #61dafb;
+  --accent-strong: #4f7cff;
+  --accent-warm: #98f5e1;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+  --code-bg: #08101f;
+  --code-border: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -25,9 +27,9 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(99, 230, 190, 0.18), transparent 28%),
-    radial-gradient(circle at top right, rgba(255, 184, 107, 0.2), transparent 24%),
-    linear-gradient(160deg, #050b14 0%, #091526 56%, #07111f 100%);
+    radial-gradient(circle at top left, rgba(79, 124, 255, 0.22), transparent 24%),
+    radial-gradient(circle at top right, rgba(97, 218, 251, 0.18), transparent 22%),
+    linear-gradient(180deg, #04070f 0%, #07101f 52%, #050816 100%);
 }
 
 a {
@@ -46,6 +48,14 @@ a {
   padding: 18px 0 48px;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 88px 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(97, 218, 251, 0.38), transparent);
+}
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -54,7 +64,7 @@ a {
   padding: 18px 24px;
   border: 1px solid var(--panel-border);
   border-radius: 20px;
-  background: rgba(6, 16, 30, 0.72);
+  background: rgba(6, 12, 24, 0.82);
   backdrop-filter: blur(14px);
 }
 
@@ -70,6 +80,7 @@ a {
 .brand {
   font-weight: 700;
   font-size: 0.92rem;
+  color: var(--accent);
 }
 
 .topbar-links {
@@ -101,6 +112,9 @@ a {
 .hero-copy {
   padding: 40px;
   border-radius: 32px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+    var(--bg-soft);
 }
 
 .eyebrow,
@@ -119,8 +133,9 @@ a {
 }
 
 .hero-copy h1 {
-  max-width: 11ch;
+  max-width: 12ch;
   font-size: clamp(3rem, 7vw, 5.7rem);
+  text-wrap: balance;
 }
 
 .hero-text,
@@ -138,6 +153,52 @@ a {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 28px;
+}
+
+.hero-code-card {
+  margin-top: 26px;
+  border: 1px solid var(--code-border);
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--code-bg);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.hero-code-top {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--code-border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-code-top span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.hero-code-top span:nth-child(1) {
+  background: #ff5f56;
+}
+
+.hero-code-top span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.hero-code-top span:nth-child(3) {
+  background: #27c93f;
+}
+
+.hero-code-block {
+  margin: 0;
+  padding: 18px 20px 20px;
+  overflow-x: auto;
+  font-family: "Space Grotesk", monospace;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #cfe6ff;
 }
 
 .button {
@@ -160,12 +221,13 @@ a {
 
 .button-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #032117;
+  color: #03111e;
+  box-shadow: 0 14px 30px rgba(79, 124, 255, 0.28);
 }
 
 .button-secondary {
   border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .hero-panel {
@@ -174,6 +236,9 @@ a {
   justify-content: space-between;
   padding: 32px;
   border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(79, 124, 255, 0.06), rgba(255, 255, 255, 0.01)),
+    var(--bg-soft);
 }
 
 .profile-photo {
@@ -219,14 +284,27 @@ a {
 .stack-list li {
   padding: 14px 16px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  padding-left: 42px;
+}
+
+.stack-list li::before {
+  content: ">";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
 }
 
 .panel-highlight {
   padding: 20px;
   border-radius: 22px;
-  background: linear-gradient(135deg, rgba(99, 230, 190, 0.16), rgba(255, 184, 107, 0.12));
+  background: linear-gradient(135deg, rgba(97, 218, 251, 0.14), rgba(79, 124, 255, 0.18));
 }
 
 .panel-highlight span {
@@ -312,7 +390,7 @@ a {
   padding: 3px 8px;
   border-radius: 999px;
   color: var(--text);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(79, 124, 255, 0.15);
 }
 
 .projects-intro p {
@@ -358,27 +436,27 @@ a {
 }
 
 .skill-icon-java {
-  background: linear-gradient(135deg, #ffb86b, #ff7b72);
+  background: linear-gradient(135deg, #ff9e64, #ff6b6b);
 }
 
 .skill-icon-php {
-  background: linear-gradient(135deg, #b9c6ff, #7aa2ff);
+  background: linear-gradient(135deg, #8ea6ff, #4f7cff);
 }
 
 .skill-icon-html {
-  background: linear-gradient(135deg, #ff9f7a, #ffd36e);
+  background: linear-gradient(135deg, #ff9966, #ffcc70);
 }
 
 .skill-icon-js {
-  background: linear-gradient(135deg, #f9f871, #ffd166);
+  background: linear-gradient(135deg, #f4f269, #ffd166);
 }
 
 .skill-icon-db {
-  background: linear-gradient(135deg, #63e6be, #7cf7d4);
+  background: linear-gradient(135deg, #69e2ff, #98f5e1);
 }
 
 .skill-icon-tools {
-  background: linear-gradient(135deg, #d2b8ff, #8db4ff);
+  background: linear-gradient(135deg, #b4befe, #85a7ff);
 }
 
 .project-card {
@@ -407,13 +485,13 @@ a {
   margin: 0 -24px 22px;
   padding: 22px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(99, 230, 190, 0.26), rgba(255, 184, 107, 0.22));
+  background: linear-gradient(135deg, rgba(97, 218, 251, 0.22), rgba(79, 124, 255, 0.22));
 }
 
 .project-cover-fallback {
   background:
-    radial-gradient(circle at top right, rgba(255, 184, 107, 0.32), transparent 26%),
-    linear-gradient(135deg, rgba(99, 230, 190, 0.24), rgba(71, 104, 255, 0.22));
+    radial-gradient(circle at top right, rgba(97, 218, 251, 0.26), transparent 26%),
+    linear-gradient(135deg, rgba(79, 124, 255, 0.28), rgba(20, 31, 57, 0.6));
 }
 
 .project-cover::after {
@@ -444,7 +522,7 @@ a {
   inset: 0;
   background:
     linear-gradient(180deg, rgba(7, 17, 31, 0.08), rgba(7, 17, 31, 0.86)),
-    linear-gradient(135deg, rgba(99, 230, 190, 0.16), rgba(255, 184, 107, 0.12));
+    linear-gradient(135deg, rgba(97, 218, 251, 0.16), rgba(79, 124, 255, 0.16));
 }
 
 .project-cover-badge {
@@ -515,8 +593,8 @@ a {
   border-radius: 999px;
   font-size: 0.76rem;
   font-weight: 700;
-  color: #02140f;
-  background: var(--accent-warm);
+  color: #03111e;
+  background: var(--accent);
 }
 
 .project-stack {
