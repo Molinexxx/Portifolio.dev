@@ -1,7 +1,7 @@
 const githubUser = "Molinexxx";
 const projectsGrid = document.querySelector("#projects-grid");
 const repoCount = document.querySelector("#repo-count");
-const hiddenRepositories = ["Portfolio.dev"];
+const hiddenRepositories = ["Portfolio.dev", "Molinexxx"];
 
 const featuredOverrides = {
   "Tcc-avanchtech-php": {
