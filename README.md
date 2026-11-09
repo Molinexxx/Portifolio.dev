@@ -1,43 +1,43 @@
 # Portifolio.dev
 
-Portfolio pessoal de Kaua Molina com foco em backend, sistemas web e exibicao automatica de projetos publicados no GitHub.
+Portfólio pessoal de Kaua Molina com foco em backend, sistemas web e exibição automática de projetos publicados no GitHub.
 
 ## Demo
 
 - Site publicado: [molinexxx.github.io/Portifolio.dev](https://molinexxx.github.io/Portifolio.dev/)
 
-## Visao Geral
+## Visão geral
 
-Este portfolio foi construido como um site estatico e apresenta:
+Este portfólio foi construído como um site estático e apresenta:
 
-- hero com apresentacao profissional
-- secao de projetos sincronizada com repositórios publicos do GitHub
+- hero com apresentação profissional
+- seção de projetos sincronizada com repositórios públicos do GitHub
 - projetos principais em destaque com estudos de caso
-- ordenacao por relevancia para os projetos secundarios
-- cache local para reduzir chamadas excessivas a GitHub API
+- ordenação por relevância para os projetos secundários
+- cache local para reduzir chamadas excessivas à API do GitHub
 - imagens UML personalizadas para projetos selecionados
-- visualizacao ampliada das imagens ao clicar na capa do projeto
+- visualização ampliada das imagens ao clicar na capa do projeto
 
-## Destaques Atuais
+## Destaques atuais
 
 - `Projeto SaaS Barbearia`
-- `Assistencia Gtech`
-- `Jogo da Memoria`
+- `Assistência Gtech`
+- `Jogo da Memória`
 
-## Recursos Implementados
+## Recursos implementados
 
-- Integracao com a GitHub API para buscar repositórios publicos
+- Integração com a API do GitHub para buscar repositórios públicos
 - Curadoria de destaques com prioridade manual
 - Fallback com cache local quando a API falha ou atinge limite
-- Exibicao de:
+- Exibição de:
   - estrelas
   - forks
   - linguagem principal
-  - data de atualizacao
-- Selos visuais de relevancia e categoria nos cards
+  - data de atualização
+- Selos visuais de relevância e categoria nos cards
 - Lightbox para ampliar imagens dos projetos
 
-## Estrutura Do Projeto
+## Estrutura do projeto
 
 ```text
 Portifolio.dev/
@@ -56,14 +56,13 @@ Portifolio.dev/
       |- imagem_jogo-da_memoria.png
 ```
 
-## Como Rodar Localmente
+## Como rodar localmente
 
-Como o projeto atual e estatico, nao precisa de `npm` nem `package.json`.
+Como o projeto atual é estático, não precisa de `npm` nem `package.json`.
 
-Voce pode abrir direto o `index.html` no navegador ou usar um servidor local:
+Você pode abrir `index.html` no navegador. Para servir o site localmente, execute o comando abaixo na raiz do repositório, com Python instalado no Windows:
 
 ```powershell
-cd "c:\Users\Administrator\Desktop\Portifolio.dev"
 py -m http.server 5500
 ```
 
@@ -71,24 +70,24 @@ Depois abra:
 
 - [http://localhost:5500](http://localhost:5500)
 
-## Como Atualizar Os Projetos
+## Como atualizar os projetos
 
-- publique ou atualize um repositorio no GitHub
-- abra o portfolio
-- clique no botao `Atualizar projetos`
+- publique ou atualize um repositório no GitHub
+- abra o portfólio
+- clique no botão `Atualizar projetos`
 
-O portfolio:
+O portfólio:
 
-- busca os repositorios publicos
+- busca os repositórios públicos
 - reorganiza os destaques
-- aplica ordenacao por relevancia
-- atualiza a grade secundaria automaticamente
+- aplica ordenação por relevância
+- atualiza a grade secundária automaticamente
 
-## Imagens Dos Projetos
+## Imagens dos projetos
 
 As imagens locais dos projetos ficam em `assets/projects/`.
 
-O portfolio tenta usar primeiro imagens locais com o nome do repositorio. Se nao encontrar, usa a capa gerada pelo GitHub.
+O portfólio tenta usar primeiro imagens locais com o nome do repositório. Se as imagens locais falharem, tenta carregar a capa gerada pelo GitHub. O card mantém uma capa visual própria caso essa tentativa também falhe.
 
 Exemplos:
 
@@ -96,30 +95,30 @@ Exemplos:
 - `Assistencia-Gtech.svg`
 - `Jogo_da_memoria-uml.svg`
 
-## UMLs Criadas
+## Diagramas UML
 
 Foram adicionadas imagens UML conceituais para:
 
 - `Projeto SaaS Barbearia`
-- `Assistencia Gtech`
-- `Jogo da Memoria`
+- `Assistência Gtech`
+- `Jogo da Memória`
 
-## Tecnologias Utilizadas
+## Tecnologias
 
 - `HTML`
 - `CSS`
 - `JavaScript`
-- `GitHub API`
-- `LocalStorage`
+- `API do GitHub`
+- `localStorage`
 - `GitHub Pages`
 
 ## Objetivo
 
-Apresentar projetos reais, evolucao tecnica e capacidade de construir sistemas web com foco em:
+Apresentar projetos reais, evolução técnica e capacidade de construir sistemas web com foco em:
 
 - Java
 - PHP
 - MySQL
 - CRUD
-- organizacao de codigo
+- organização de código
 - backend e desenvolvimento web
