@@ -1,10 +1,10 @@
 # Imagens dos projetos
 
-Coloque aqui as imagens dos seus repositorios para que o portfolio use uma capa personalizada.
+Coloque aqui as imagens dos seus repositórios para que o portfolio use uma capa personalizada.
 
 ## Como nomear
 
-Use o mesmo nome do repositorio:
+Use o mesmo nome do repositório:
 
 - `Tcc-avanchtech-php.png`
 - `Crud-em-java.jpg`
@@ -18,4 +18,4 @@ Use o mesmo nome do repositorio:
 - `.jpeg`
 - `.webp`
 
-Se nao existir uma imagem local, o site usa automaticamente a capa do GitHub para aquele repositorio.
+Se as imagens locais falharem, o site tenta carregar a capa do GitHub. Se essa tentativa também falhar, o card mantém uma capa visual própria.
